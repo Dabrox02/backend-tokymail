@@ -73,6 +73,7 @@ export class EmailController {
 
       return messages.reduce((acc: EmailMessage[], message) => {
         if (!message) return acc;
+        if (message.envelope?.to?.[0]?.address !== to) return [];
 
         const encryptedUid = this.encryptionService.encrypt(
           message?.uid?.toString() || '',
