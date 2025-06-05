@@ -1,9 +1,9 @@
 export const MAILBOX_CONFIG = {
   ALLOWED_MAILBOXES: [
     'INBOX.Netflix',
-    'INBOX.Disney',
-    'INBOX.Primevideo',
-    'INBOX.Max',
+    // 'INBOX.Disney',
+    // 'INBOX.Primevideo',
+    // 'INBOX.Max',
   ] as const,
 
   ROLE_BASED_ACCESS: {

@@ -1,8 +1,8 @@
+import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-import { ValidationPipe } from '@nestjs/common';
 import { setupSwagger } from './config/swagger.config';
-import { BigIntInterceptor } from './interceptors/bigint.interceptor';
+import { BigIntInterceptor } from './shared/interceptors/bigint.interceptor';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
