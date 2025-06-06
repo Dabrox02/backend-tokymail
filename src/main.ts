@@ -19,7 +19,15 @@ async function bootstrap() {
   );
 
   app.useGlobalInterceptors(new BigIntInterceptor());
-  app.enableCors();
+
+  const corsOrigins =
+    process.env.NODE_ENV === 'production'
+      ? ['https://tokymail.vercel.app/', 'https://jtvprem.xyz']
+      : ['http://localhost:3000', 'http://localhost:3001'];
+
+  app.enableCors({
+    origin: corsOrigins,
+  });
 
   setupSwagger(app, {
     title: 'API de Servicio tokens de correo electrónico',
