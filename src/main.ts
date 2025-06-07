@@ -3,6 +3,7 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { setupSwagger } from './config/swagger.config';
 import { BigIntInterceptor } from './shared/interceptors/bigint.interceptor';
+import { HttpExceptionFilter } from './shared/filters/http-exception.filter';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -19,6 +20,7 @@ async function bootstrap() {
   );
 
   app.useGlobalInterceptors(new BigIntInterceptor());
+  app.useGlobalFilters(new HttpExceptionFilter());
 
   const corsOrigins =
     process.env.NODE_ENV === 'production'

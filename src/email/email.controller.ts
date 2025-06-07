@@ -10,16 +10,16 @@ import {
   UseGuards,
   ValidationPipe,
 } from '@nestjs/common';
-import { ApiTags, ApiBearerAuth } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 import { SearchObject } from 'imapflow';
-import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
-import { CurrentUser } from 'src/auth/decorators/current-user.decorator';
-import { ImapNonBlockingService } from '../imap-non-blocking/imap-non-blocking.service';
-import { GetEmailsDto } from './dto/get-emails.dto';
-import { GetEmailDto } from './dto/get-email.dto';
 import { AuthenticatedUser } from 'src/auth/auth.types';
-import { EncryptionService } from 'src/shared/encryption.service';
+import { CurrentUser } from 'src/auth/decorators/current-user.decorator';
+import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
 import { EmailMessage } from 'src/imap-non-blocking/imap-non-blocking.types';
+import { EncryptionService } from 'src/shared/encryption.service';
+import { ImapNonBlockingService } from '../imap-non-blocking/imap-non-blocking.service';
+import { GetEmailDto } from './dto/get-email.dto';
+import { GetEmailsDto } from './dto/get-emails.dto';
 
 @ApiTags('Emails')
 @Controller('emails')

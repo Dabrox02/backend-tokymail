@@ -40,7 +40,7 @@ export class EncryptionService {
     const decrypted = bytes.toString(enc.Utf8);
 
     if (!decrypted) {
-      throw new Error('Decryption failed. Invalid or tampered input.');
+      throw new Error('DECRYPTION_FAILED');
     }
 
     return decrypted;

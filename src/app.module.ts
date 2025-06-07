@@ -8,6 +8,7 @@ import { ImapConnectionPoolModule } from './imap-connection-pool/imap-connection
 import { EmailModule } from './email/email.module';
 import { AuthModule } from './auth/auth.module';
 import { SharedModule } from './shared/shared.module';
+import { NetflixModule } from './netflix/netflix.module';
 
 @Module({
   imports: [
@@ -21,6 +22,7 @@ import { SharedModule } from './shared/shared.module';
     EmailModule,
     AuthModule,
     SharedModule,
+    NetflixModule,
   ],
   controllers: [AppController],
   providers: [AppService],
